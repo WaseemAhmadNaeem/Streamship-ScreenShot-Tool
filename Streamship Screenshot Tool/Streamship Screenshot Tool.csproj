@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Logic\AreaSelector.cs" />
+    <Compile Include="Business Logic\ScreenShotFull.cs" />
     <Compile Include="Business Logic\SelectedArea.cs" />
     <Compile Include="Custom Controls\ImageButton.cs">
       <SubType>UserControl</SubType>
@@ -65,6 +65,12 @@
     <Compile Include="Presentation\ControlBox.Designer.cs">
       <DependentUpon>ControlBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\StreamshipScreenShotAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\StreamshipScreenShotAbout.Designer.cs">
+      <DependentUpon>StreamshipScreenShotAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Custom Controls\ImageButton.resx">
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ControlBox.resx">
       <DependentUpon>ControlBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\StreamshipScreenShotAbout.resx">
+      <DependentUpon>StreamshipScreenShotAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

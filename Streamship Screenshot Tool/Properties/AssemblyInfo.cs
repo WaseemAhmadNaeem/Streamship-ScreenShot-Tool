@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Streamship Screenshot Tool")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Streamship Screenshot is Next Generation Screen Capturing Tool Desinged for Professionals")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Streamship Technology Pakistan")]
 [assembly: AssemblyProduct("Streamship Screenshot Tool")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
