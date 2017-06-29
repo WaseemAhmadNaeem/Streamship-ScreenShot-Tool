@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
+
 
 namespace Streamship_Screenshot_Tool.Presentation
 {
@@ -12,7 +12,7 @@ namespace Streamship_Screenshot_Tool.Presentation
         /// <summary>
         /// Delegates
         /// </summary>
-        
+        public Bitmap CropedImage { get; set; }
 
         //Fields
         Point start, end;
@@ -26,9 +26,10 @@ namespace Streamship_Screenshot_Tool.Presentation
         /// </summary>
         public BackgroundHelper()
         {
+
             SetResolution();
             InitializeComponent();
-            _color = Color.Black;
+            _color = Properties.Settings.Default.InkColor;
             Streamship_Screenshot_Tool.Business_Logic.ScreenShotFull screen = new Business_Logic.ScreenShotFull();
             this.BackgroundImage = screen.CaptureScreen() as Image;
             
@@ -82,9 +83,10 @@ namespace Streamship_Screenshot_Tool.Presentation
                     {
                         to.selectedImage = (selectedImage).Clone(_croppedArea, selectedImage.PixelFormat);
                         to.selectedImage.Save(System.IO.Path.Combine(System.IO.Path.GetTempPath(),"StreamShip ScreenShot Tool","WASEEM.BMP"));
+                        CropedImage = selectedImage;
                         leftCount = 2;
                         ///Open Editor
-                        this.Hide();
+                        
 
                     }
                     catch
@@ -99,6 +101,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             }
            
         }
+        
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

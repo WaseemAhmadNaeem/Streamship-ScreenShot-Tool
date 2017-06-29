@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,17 +30,23 @@ namespace Streamship_Screenshot_Tool.Presentation
         private void SelectArea_Clicked(object sender)
         {
             this.Hide();
-            BackgroundHelper a = new BackgroundHelper()
+            BackgroundHelper a = new BackgroundHelper();
+            a.ShowDialog();
+            selectedImage = a.CropedImage;
+            if (Properties.Settings.Default.ClipboardCopy && selectedImage != null)
             {
-                Visible = true,
-
-            };
+                Clipboard.SetImage(selectedImage);
+            }
         }
 
         private void FullScreenCapture_Clicked(object sender)
         {
             Streamship_Screenshot_Tool.Business_Logic.ScreenShotFull screen = new Business_Logic.ScreenShotFull();
-            Bitmap fullImage = screen.CaptureScreen();
+            selectedImage = screen.CaptureScreen();
+            if (Properties.Settings.Default.ClipboardCopy && selectedImage != null)
+            {
+                Clipboard.SetImage(selectedImage);
+            }
 
         }
 
@@ -56,6 +65,24 @@ namespace Streamship_Screenshot_Tool.Presentation
         {
             Configurations config = new Configurations();
             config.ShowDialog();
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (Properties.Settings.Default.Destination.Length > 0)
+            {
+                GrantAccess(Properties.Settings.Default.Destination);
+                
+                if(selectedImage != null)
+                    selectedImage.Save(System.IO.Path.Combine(Properties.Settings.Default.Destination,DateTime.Now.ToShortTimeString()).Replace(':','9'),System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
+        private void GrantAccess(string fullPath)
+        {
+            DirectoryInfo dInfo = new DirectoryInfo(fullPath);
+            DirectorySecurity dSecurity = dInfo.GetAccessControl();
+            dSecurity.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), FileSystemRights.FullControl, InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit, PropagationFlags.NoPropagateInherit, AccessControlType.Allow));
+            dInfo.SetAccessControl(dSecurity);
         }
     }
 }

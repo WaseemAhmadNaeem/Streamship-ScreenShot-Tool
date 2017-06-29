@@ -38,6 +38,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             Properties.Settings.Default.ClipboardCopy = cboxClipBoardSnap.Checked;
             Properties.Settings.Default.Destination = DefaultDestination;
             Properties.Settings.Default.InkColor = btnColor.BackColor;
+            Properties.Settings.Default.Save();
             this.Dispose();
         }
 
@@ -62,5 +63,6 @@ namespace Streamship_Screenshot_Tool.Presentation
                 DefaultDestination = folderBrowserDialog1.SelectedPath;
             }
         }
+        
     }
 }
