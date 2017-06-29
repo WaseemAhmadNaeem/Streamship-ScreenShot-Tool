@@ -59,6 +59,12 @@
     <Compile Include="Presentation\BackgroundHelper.Designer.cs">
       <DependentUpon>BackgroundHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Configurations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Configurations.Designer.cs">
+      <DependentUpon>Configurations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\ControlBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BackgroundHelper.resx">
       <DependentUpon>BackgroundHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Configurations.resx">
+      <DependentUpon>Configurations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ControlBox.resx">
       <DependentUpon>ControlBox.cs</DependentUpon>

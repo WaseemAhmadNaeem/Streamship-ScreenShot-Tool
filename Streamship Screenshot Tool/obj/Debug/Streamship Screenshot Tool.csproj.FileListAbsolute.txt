@@ -10,3 +10,4 @@ C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screens
 C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.BackgroundHelper.resources
 C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.ControlBox.resources
 C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.StreamshipScreenShotAbout.resources
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.Configurations.resources

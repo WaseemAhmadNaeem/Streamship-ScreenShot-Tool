@@ -51,5 +51,11 @@ namespace Streamship_Screenshot_Tool.Presentation
             StreamshipScreenShotAbout aboutBox = new StreamshipScreenShotAbout();
             aboutBox.ShowDialog();
         }
+
+        private void imageButton1_Clicked(object sender)
+        {
+            Configurations config = new Configurations();
+            config.ShowDialog();
+        }
     }
 }

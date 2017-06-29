@@ -88,6 +88,7 @@
             this.imageButton1.Name = "imageButton1";
             this.imageButton1.Size = new System.Drawing.Size(75, 67);
             this.imageButton1.TabIndex = 4;
+            this.imageButton1.Clicked += new Streamship_Screenshot_Tool.Custom_Controls.ImageButton.ControlEventHandler(this.imageButton1_Clicked);
             // 
             // imageButton2
             // 
