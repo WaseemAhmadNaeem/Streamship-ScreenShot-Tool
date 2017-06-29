@@ -29,6 +29,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             cBoxPromptSave.Checked = Properties.Settings.Default.PromptSave;
             cboxClipBoardSnap.Checked = Properties.Settings.Default.ClipboardCopy;
             DefaultDestination = Properties.Settings.Default.Destination;
+            lblDestination.Text = DefaultDestination;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -50,6 +51,15 @@ namespace Streamship_Screenshot_Tool.Presentation
             if(colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 btnColor.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void btnDestination_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowNewFolderButton = true;
+            if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                DefaultDestination = folderBrowserDialog1.SelectedPath;
             }
         }
     }

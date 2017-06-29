@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cboxClipBoardSnap = new System.Windows.Forms.CheckBox();
+            this.btnDestination = new System.Windows.Forms.Button();
             this.cBoxPromptSave = new System.Windows.Forms.CheckBox();
+            this.cboxClipBoardSnap = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnColor = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDestination = new System.Windows.Forms.Button();
-            this.btnColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.lblDestination = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblDestination);
             this.groupBox1.Controls.Add(this.btnDestination);
             this.groupBox1.Controls.Add(this.cBoxPromptSave);
             this.groupBox1.Controls.Add(this.cboxClipBoardSnap);
@@ -53,15 +56,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application";
             // 
-            // groupBox2
+            // btnDestination
             // 
-            this.groupBox2.Controls.Add(this.btnColor);
-            this.groupBox2.Location = new System.Drawing.Point(12, 162);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(291, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Selection";
+            this.btnDestination.ImageKey = "(none)";
+            this.btnDestination.Location = new System.Drawing.Point(7, 67);
+            this.btnDestination.Name = "btnDestination";
+            this.btnDestination.Size = new System.Drawing.Size(112, 23);
+            this.btnDestination.TabIndex = 2;
+            this.btnDestination.Text = "Dentination Folder";
+            this.btnDestination.UseVisualStyleBackColor = true;
+            this.btnDestination.Click += new System.EventHandler(this.btnDestination_Click);
+            // 
+            // cBoxPromptSave
+            // 
+            this.cBoxPromptSave.AutoSize = true;
+            this.cBoxPromptSave.Location = new System.Drawing.Point(7, 44);
+            this.cBoxPromptSave.Name = "cBoxPromptSave";
+            this.cBoxPromptSave.Size = new System.Drawing.Size(163, 17);
+            this.cBoxPromptSave.TabIndex = 1;
+            this.cBoxPromptSave.Text = "Prompt to save before exiting";
+            this.cBoxPromptSave.UseVisualStyleBackColor = true;
             // 
             // cboxClipBoardSnap
             // 
@@ -73,15 +87,25 @@
             this.cboxClipBoardSnap.Text = "Always copy snips to clipboard";
             this.cboxClipBoardSnap.UseVisualStyleBackColor = true;
             // 
-            // cBoxPromptSave
+            // groupBox2
             // 
-            this.cBoxPromptSave.AutoSize = true;
-            this.cBoxPromptSave.Location = new System.Drawing.Point(7, 44);
-            this.cBoxPromptSave.Name = "cBoxPromptSave";
-            this.cBoxPromptSave.Size = new System.Drawing.Size(163, 17);
-            this.cBoxPromptSave.TabIndex = 1;
-            this.cBoxPromptSave.Text = "Prompt to save before exiting";
-            this.cBoxPromptSave.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.btnColor);
+            this.groupBox2.Location = new System.Drawing.Point(12, 162);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(291, 100);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Selection";
+            // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(6, 19);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(112, 23);
+            this.btnColor.TabIndex = 3;
+            this.btnColor.Text = "Change Color";
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // btnOK
             // 
@@ -103,25 +127,14 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnDestination
+            // lblDestination
             // 
-            this.btnDestination.ImageKey = "(none)";
-            this.btnDestination.Location = new System.Drawing.Point(7, 67);
-            this.btnDestination.Name = "btnDestination";
-            this.btnDestination.Size = new System.Drawing.Size(112, 23);
-            this.btnDestination.TabIndex = 2;
-            this.btnDestination.Text = "Dentination Folder";
-            this.btnDestination.UseVisualStyleBackColor = true;
-            // 
-            // btnColor
-            // 
-            this.btnColor.Location = new System.Drawing.Point(6, 19);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(112, 23);
-            this.btnColor.TabIndex = 3;
-            this.btnColor.Text = "Change Color";
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            this.lblDestination.AutoSize = true;
+            this.lblDestination.Location = new System.Drawing.Point(6, 93);
+            this.lblDestination.Name = "lblDestination";
+            this.lblDestination.Size = new System.Drawing.Size(35, 13);
+            this.lblDestination.TabIndex = 4;
+            this.lblDestination.Text = "label1";
             // 
             // Configurations
             // 
@@ -154,5 +167,7 @@
         private System.Windows.Forms.Button btnDestination;
         private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label lblDestination;
     }
 }
