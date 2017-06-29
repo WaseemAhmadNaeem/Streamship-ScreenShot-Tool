@@ -47,8 +47,35 @@
   <ItemGroup>
     <Compile Include="Business Logic\AreaSelector.cs" />
     <Compile Include="Business Logic\SelectedArea.cs" />
+    <Compile Include="Custom Controls\ImageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\ImageButton.Designer.cs">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\BackgroundHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\BackgroundHelper.Designer.cs">
+      <DependentUpon>BackgroundHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ControlBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ControlBox.Designer.cs">
+      <DependentUpon>ControlBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Custom Controls\ImageButton.resx">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\BackgroundHelper.resx">
+      <DependentUpon>BackgroundHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ControlBox.resx">
+      <DependentUpon>ControlBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

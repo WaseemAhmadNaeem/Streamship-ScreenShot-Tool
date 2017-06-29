@@ -1,0 +1,11 @@
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\bin\Debug\Streamship Screenshot Tool.exe.config
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\bin\Debug\Streamship Screenshot Tool.exe
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\bin\Debug\Streamship Screenshot Tool.pdb
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship Screenshot Tool.csprojResolveAssemblyReference.cache
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Properties.Resources.resources
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship Screenshot Tool.csproj.GenerateResource.Cache
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship Screenshot Tool.exe
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship Screenshot Tool.pdb
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Custom_Controls.ImageButton.resources
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.BackgroundHelper.resources
+C:\Users\Primary Test\Source\Repos\Streamship-ScreenShot-Tool\Streamship Screenshot Tool\obj\Debug\Streamship_Screenshot_Tool.Presentation.ControlBox.resources
