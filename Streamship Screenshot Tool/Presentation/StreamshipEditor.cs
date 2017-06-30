@@ -28,5 +28,15 @@ namespace Streamship_Screenshot_Tool.Presentation
         {
 
         }
+
+        private void btnCancel_Clicked(object sender)
+        {
+            this.Dispose();
+        }
+
+        private void btnSave_Clicked(object sender)
+        {
+            (editorImage.Image as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination,DateTime.Now.ToLongTimeString().Replace(':','1')+".bmp"));
+        }
     }
 }

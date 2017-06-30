@@ -76,7 +76,7 @@
             this.editorImage.Location = new System.Drawing.Point(0, 0);
             this.editorImage.Name = "editorImage";
             this.editorImage.Size = new System.Drawing.Size(675, 405);
-            this.editorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.editorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.editorImage.TabIndex = 0;
             this.editorImage.TabStop = false;
             // 
@@ -89,16 +89,19 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(53, 48);
             this.btnSave.TabIndex = 0;
+            this.btnSave.Clicked += new Streamship_Screenshot_Tool.Custom_Controls.ImageButton.ControlEventHandler(this.btnSave_Clicked);
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnCancel.Location = new System.Drawing.Point(63, 4);
+            this.btnCancel.Location = new System.Drawing.Point(619, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(53, 48);
             this.btnCancel.TabIndex = 1;
+            this.btnCancel.Clicked += new Streamship_Screenshot_Tool.Custom_Controls.ImageButton.ControlEventHandler(this.btnCancel_Clicked);
             // 
             // btnBlur
             // 
@@ -155,7 +158,7 @@
             this.btnErasor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnErasor.BackgroundImage")));
             this.btnErasor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnErasor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnErasor.Location = new System.Drawing.Point(417, 4);
+            this.btnErasor.Location = new System.Drawing.Point(63, 4);
             this.btnErasor.Name = "btnErasor";
             this.btnErasor.Size = new System.Drawing.Size(53, 48);
             this.btnErasor.TabIndex = 7;
