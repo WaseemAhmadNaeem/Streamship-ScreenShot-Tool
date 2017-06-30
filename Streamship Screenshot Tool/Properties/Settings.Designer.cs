@@ -70,5 +70,29 @@ namespace Streamship_Screenshot_Tool.Properties {
                 this["Destination"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenEditor {
+            get {
+                return ((bool)(this["OpenEditor"]));
+            }
+            set {
+                this["OpenEditor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int PenWidth {
+            get {
+                return ((int)(this["PenWidth"]));
+            }
+            set {
+                this["PenWidth"] = value;
+            }
+        }
     }
 }

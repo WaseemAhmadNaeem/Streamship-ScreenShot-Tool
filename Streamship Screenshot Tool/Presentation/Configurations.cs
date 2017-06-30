@@ -30,6 +30,8 @@ namespace Streamship_Screenshot_Tool.Presentation
             cboxClipBoardSnap.Checked = Properties.Settings.Default.ClipboardCopy;
             DefaultDestination = Properties.Settings.Default.Destination;
             lblDestination.Text = DefaultDestination;
+            cBoxOpenEditor.Checked = Properties.Settings.Default.OpenEditor;
+            penWidth.Value = Properties.Settings.Default.PenWidth;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -38,7 +40,10 @@ namespace Streamship_Screenshot_Tool.Presentation
             Properties.Settings.Default.ClipboardCopy = cboxClipBoardSnap.Checked;
             Properties.Settings.Default.Destination = DefaultDestination;
             Properties.Settings.Default.InkColor = btnColor.BackColor;
+            Properties.Settings.Default.PenWidth = Convert.ToInt32(penWidth.Value);
+            Properties.Settings.Default.OpenEditor = cBoxOpenEditor.Checked;
             Properties.Settings.Default.Save();
+
             this.Dispose();
         }
 
@@ -63,6 +68,10 @@ namespace Streamship_Screenshot_Tool.Presentation
                 DefaultDestination = folderBrowserDialog1.SelectedPath;
             }
         }
-        
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

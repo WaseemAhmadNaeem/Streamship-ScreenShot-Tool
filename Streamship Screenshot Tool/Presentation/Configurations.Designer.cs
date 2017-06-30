@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDestination = new System.Windows.Forms.Label();
             this.btnDestination = new System.Windows.Forms.Button();
             this.cBoxPromptSave = new System.Windows.Forms.CheckBox();
             this.cboxClipBoardSnap = new System.Windows.Forms.CheckBox();
@@ -38,13 +39,17 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.lblDestination = new System.Windows.Forms.Label();
+            this.cBoxOpenEditor = new System.Windows.Forms.CheckBox();
+            this.penWidth = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.penWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cBoxOpenEditor);
             this.groupBox1.Controls.Add(this.lblDestination);
             this.groupBox1.Controls.Add(this.btnDestination);
             this.groupBox1.Controls.Add(this.cBoxPromptSave);
@@ -55,11 +60,21 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblDestination
+            // 
+            this.lblDestination.AutoSize = true;
+            this.lblDestination.Location = new System.Drawing.Point(6, 120);
+            this.lblDestination.Name = "lblDestination";
+            this.lblDestination.Size = new System.Drawing.Size(35, 13);
+            this.lblDestination.TabIndex = 4;
+            this.lblDestination.Text = "label1";
             // 
             // btnDestination
             // 
             this.btnDestination.ImageKey = "(none)";
-            this.btnDestination.Location = new System.Drawing.Point(7, 67);
+            this.btnDestination.Location = new System.Drawing.Point(7, 94);
             this.btnDestination.Name = "btnDestination";
             this.btnDestination.Size = new System.Drawing.Size(112, 23);
             this.btnDestination.TabIndex = 2;
@@ -89,6 +104,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.penWidth);
             this.groupBox2.Controls.Add(this.btnColor);
             this.groupBox2.Location = new System.Drawing.Point(12, 162);
             this.groupBox2.Name = "groupBox2";
@@ -99,7 +116,7 @@
             // 
             // btnColor
             // 
-            this.btnColor.Location = new System.Drawing.Point(6, 19);
+            this.btnColor.Location = new System.Drawing.Point(173, 19);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(112, 23);
             this.btnColor.TabIndex = 3;
@@ -127,14 +144,31 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblDestination
+            // cBoxOpenEditor
             // 
-            this.lblDestination.AutoSize = true;
-            this.lblDestination.Location = new System.Drawing.Point(6, 93);
-            this.lblDestination.Name = "lblDestination";
-            this.lblDestination.Size = new System.Drawing.Size(35, 13);
-            this.lblDestination.TabIndex = 4;
-            this.lblDestination.Text = "label1";
+            this.cBoxOpenEditor.AutoSize = true;
+            this.cBoxOpenEditor.Location = new System.Drawing.Point(7, 68);
+            this.cBoxOpenEditor.Name = "cBoxOpenEditor";
+            this.cBoxOpenEditor.Size = new System.Drawing.Size(135, 17);
+            this.cBoxOpenEditor.TabIndex = 5;
+            this.cBoxOpenEditor.Text = "Open Editor After Snap";
+            this.cBoxOpenEditor.UseVisualStyleBackColor = true;
+            // 
+            // penWidth
+            // 
+            this.penWidth.Location = new System.Drawing.Point(173, 48);
+            this.penWidth.Name = "penWidth";
+            this.penWidth.Size = new System.Drawing.Size(112, 20);
+            this.penWidth.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(107, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Pen Width:";
             // 
             // Configurations
             // 
@@ -152,6 +186,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.penWidth)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,5 +205,8 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label lblDestination;
+        private System.Windows.Forms.CheckBox cBoxOpenEditor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown penWidth;
     }
 }
