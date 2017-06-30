@@ -31,6 +31,8 @@ namespace Streamship_Screenshot_Tool.Presentation
         {
             this.Hide();
             BackgroundHelper a = new BackgroundHelper();
+
+
             a.ShowDialog();
             selectedImage = a.CropedImage;
             if (Properties.Settings.Default.ClipboardCopy && selectedImage != null)

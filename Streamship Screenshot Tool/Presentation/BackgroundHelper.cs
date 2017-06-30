@@ -15,10 +15,10 @@ namespace Streamship_Screenshot_Tool.Presentation
         public Bitmap CropedImage { get; set; }
 
         //Fields
-        Point start, end;
+        
         int leftCount = 0;
         Color _color;
-        Rectangle _croppedArea = new Rectangle();
+        Rectangle _croppedArea;
 
        
         /// <summary>
@@ -32,20 +32,26 @@ namespace Streamship_Screenshot_Tool.Presentation
             _color = Properties.Settings.Default.InkColor;
             Streamship_Screenshot_Tool.Business_Logic.ScreenShotFull screen = new Business_Logic.ScreenShotFull();
             this.BackgroundImage = screen.CaptureScreen() as Image;
+            this.DoubleBuffered = true;
             
          }
-        /// <summary>
-        /// Constructor That Have Color of Rectangle to draw For Selection
-        /// </summary>
-        /// <param name="color">Color of Selection Area</param>
-        public BackgroundHelper(Color color)
+ 
+        protected override void OnMouseDown(MouseEventArgs e)
         {
-            SetResolution();
-            InitializeComponent();
-            _color = color;
-            Streamship_Screenshot_Tool.Business_Logic.ScreenShotFull screen = new Business_Logic.ScreenShotFull();
-            this.BackgroundImage = screen.CaptureScreen() as Image;
-
+            base.OnMouseDown(e);
+            if(e.Button == MouseButtons.Left && leftCount.Equals(0) && _croppedArea != null)
+            {
+                _croppedArea = new Rectangle(e.Location, new Size(0, 0));
+                leftCount++;
+            }else if (leftCount.Equals(1))
+            {
+                leftCount++;
+            }
+            if(leftCount == 2)
+            {
+                CropedImage = (BackgroundImage as Bitmap).Clone(_croppedArea,(BackgroundImage as Bitmap).PixelFormat);
+                this.Close();
+            }
         }
         /// <summary>
         /// A Helper in Selection of Area to be Capture
@@ -54,77 +60,28 @@ namespace Streamship_Screenshot_Tool.Presentation
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
-
-
-            if ((MouseButtons.Left == MouseButtons))
+            if (leftCount < 2)
             {
-                end = Cursor.Position;
-                if (leftCount == 0)
-                {
-                    start = Cursor.Position;
-                    _croppedArea.Location = start;
-                    leftCount = 1;
-                }
-
-                else if (leftCount == 1)
-                {
-
-                    end = Cursor.Position;
-                    _croppedArea.Width = end.X - start.X;
-                    _croppedArea.Height = end.Y - start.Y;
-                    if (_croppedArea.Height <= 0 || _croppedArea.Width <= 0)
-                    {
-                        leftCount = 1;
-                    }
-                    
-                    ControlBox to = new Presentation.ControlBox();
-                    Bitmap selectedImage = BackgroundImage as Bitmap;
-                    try
-                    {
-                        to.selectedImage = (selectedImage).Clone(_croppedArea, selectedImage.PixelFormat);
-                        to.selectedImage.Save(System.IO.Path.Combine(System.IO.Path.GetTempPath(),"StreamShip ScreenShot Tool","WASEEM.BMP"));
-                        CropedImage = selectedImage;
-                        leftCount = 2;
-                        ///Open Editor
-                        
-
-                    }
-                    catch
-                    {
-                        leftCount = 1;
-                    }
-                    
-                    
-                }
-
-
+                _croppedArea = new Rectangle(_croppedArea.Location, new Size(e.X - _croppedArea.X, e.Y - _croppedArea.Y));
             }
-           
         }
         
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+           
+            Pen pen = new Pen(new SolidBrush(Properties.Settings.Default.InkColor), Properties.Settings.Default.PenWidth);
+            Graphics g = e.Graphics;
             if (leftCount > 0)
             {
-                Graphics g = e.Graphics;
-                {
-
-                    Rectangle rect = new Rectangle(start, new Size(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y));
-                    Region re = new Region(Screen.PrimaryScreen.WorkingArea);
-                    re.Exclude(rect);
-                    SizeF StringSize = g.MeasureString(start.ToString(), this.Font);
-                    PointF startString = new PointF(start.X - StringSize.Width, start.Y - StringSize.Height);
-                    g.DrawString(start.ToString(), this.Font, new SolidBrush(_color), startString);
-                    g.DrawString(Cursor.Position.ToString(), this.Font, new SolidBrush(_color), Cursor.Position);
-                    g.DrawRectangle(new Pen(_color), rect);
-                    
-                }
-
-
+                SizeF StringLength = g.MeasureString(_croppedArea.Location.ToString(), this.Font);
+                g.DrawRectangle(pen, _croppedArea);
+                g.DrawString(_croppedArea.Location.ToString(),this.Font,new SolidBrush(Properties.Settings.Default.InkColor),new Point((int)(_croppedArea.X-StringLength.Width),(int)(_croppedArea.Y-StringLength.Height)));
+                g.DrawString(Control.MousePosition.ToString(), this.Font, new SolidBrush(Properties.Settings.Default.InkColor),Control.MousePosition);
             }
             this.Invalidate();
-            this.DoubleBuffered = true;
+                
+            
 
         }
         /// <summary>
