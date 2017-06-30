@@ -132,6 +132,7 @@
             this.btnSquare.Name = "btnSquare";
             this.btnSquare.Size = new System.Drawing.Size(53, 48);
             this.btnSquare.TabIndex = 4;
+            this.btnSquare.Clicked += new Streamship_Screenshot_Tool.Custom_Controls.ImageButton.ControlEventHandler(this.btnSquare_Clicked);
             // 
             // btnCircle
             // 

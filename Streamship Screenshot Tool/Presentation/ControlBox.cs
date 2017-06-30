@@ -79,7 +79,12 @@ namespace Streamship_Screenshot_Tool.Presentation
 
         private void ControlBox_Load(object sender, EventArgs e)
         {
-
+            if(Properties.Settings.Default.Destination.Length == 0)
+            {
+                Properties.Settings.Default.Destination =
+                    @"C:\Users" + Environment.UserName + @"\Desktop";
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void imageButton2_Clicked(object sender)
@@ -96,13 +101,7 @@ namespace Streamship_Screenshot_Tool.Presentation
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            if (Properties.Settings.Default.Destination.Length > 0)
-            {
-                GrantAccess(Properties.Settings.Default.Destination);
-                
-                if(selectedImage != null)
-                    selectedImage.Save(System.IO.Path.Combine(Properties.Settings.Default.Destination,DateTime.Now.ToShortTimeString()).Replace(':','9'),System.Drawing.Imaging.ImageFormat.Png);
-            }
+          
         }
         private void GrantAccess(string fullPath)
         {
