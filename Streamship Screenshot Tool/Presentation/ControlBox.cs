@@ -47,7 +47,8 @@ namespace Streamship_Screenshot_Tool.Presentation
             }
             else
             {
-                //Save to Default
+                
+                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToShortTimeString().Replace(':', '2')));
             }
             this.Show();
         }
@@ -71,7 +72,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             }
             else
             {
-                //Save to Default
+                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToShortTimeString().Replace(':', '3')));
             }
             this.Show();
         }
