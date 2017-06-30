@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cBoxOpenEditor = new System.Windows.Forms.CheckBox();
             this.lblDestination = new System.Windows.Forms.Label();
             this.btnDestination = new System.Windows.Forms.Button();
             this.cBoxPromptSave = new System.Windows.Forms.CheckBox();
             this.cboxClipBoardSnap = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.penWidth = new System.Windows.Forms.NumericUpDown();
             this.btnColor = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.cBoxOpenEditor = new System.Windows.Forms.CheckBox();
-            this.penWidth = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penWidth)).BeginInit();
@@ -50,8 +50,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cBoxOpenEditor);
-            this.groupBox1.Controls.Add(this.lblDestination);
-            this.groupBox1.Controls.Add(this.btnDestination);
             this.groupBox1.Controls.Add(this.cBoxPromptSave);
             this.groupBox1.Controls.Add(this.cboxClipBoardSnap);
             this.groupBox1.Location = new System.Drawing.Point(11, 13);
@@ -62,10 +60,20 @@
             this.groupBox1.Text = "Application";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cBoxOpenEditor
+            // 
+            this.cBoxOpenEditor.AutoSize = true;
+            this.cBoxOpenEditor.Location = new System.Drawing.Point(7, 68);
+            this.cBoxOpenEditor.Name = "cBoxOpenEditor";
+            this.cBoxOpenEditor.Size = new System.Drawing.Size(135, 17);
+            this.cBoxOpenEditor.TabIndex = 5;
+            this.cBoxOpenEditor.Text = "Open Editor After Snap";
+            this.cBoxOpenEditor.UseVisualStyleBackColor = true;
+            // 
             // lblDestination
             // 
             this.lblDestination.AutoSize = true;
-            this.lblDestination.Location = new System.Drawing.Point(6, 120);
+            this.lblDestination.Location = new System.Drawing.Point(7, 45);
             this.lblDestination.Name = "lblDestination";
             this.lblDestination.Size = new System.Drawing.Size(35, 13);
             this.lblDestination.TabIndex = 4;
@@ -74,9 +82,9 @@
             // btnDestination
             // 
             this.btnDestination.ImageKey = "(none)";
-            this.btnDestination.Location = new System.Drawing.Point(7, 94);
+            this.btnDestination.Location = new System.Drawing.Point(8, 19);
             this.btnDestination.Name = "btnDestination";
-            this.btnDestination.Size = new System.Drawing.Size(112, 23);
+            this.btnDestination.Size = new System.Drawing.Size(105, 23);
             this.btnDestination.TabIndex = 2;
             this.btnDestination.Text = "Dentination Folder";
             this.btnDestination.UseVisualStyleBackColor = true;
@@ -105,7 +113,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblDestination);
             this.groupBox2.Controls.Add(this.penWidth);
+            this.groupBox2.Controls.Add(this.btnDestination);
             this.groupBox2.Controls.Add(this.btnColor);
             this.groupBox2.Location = new System.Drawing.Point(12, 162);
             this.groupBox2.Name = "groupBox2";
@@ -113,6 +123,22 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selection";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(170, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Pen Width:";
+            // 
+            // penWidth
+            // 
+            this.penWidth.Location = new System.Drawing.Point(173, 71);
+            this.penWidth.Name = "penWidth";
+            this.penWidth.Size = new System.Drawing.Size(112, 20);
+            this.penWidth.TabIndex = 4;
             // 
             // btnColor
             // 
@@ -143,32 +169,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // cBoxOpenEditor
-            // 
-            this.cBoxOpenEditor.AutoSize = true;
-            this.cBoxOpenEditor.Location = new System.Drawing.Point(7, 68);
-            this.cBoxOpenEditor.Name = "cBoxOpenEditor";
-            this.cBoxOpenEditor.Size = new System.Drawing.Size(135, 17);
-            this.cBoxOpenEditor.TabIndex = 5;
-            this.cBoxOpenEditor.Text = "Open Editor After Snap";
-            this.cBoxOpenEditor.UseVisualStyleBackColor = true;
-            // 
-            // penWidth
-            // 
-            this.penWidth.Location = new System.Drawing.Point(173, 48);
-            this.penWidth.Name = "penWidth";
-            this.penWidth.Size = new System.Drawing.Size(112, 20);
-            this.penWidth.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Pen Width:";
             // 
             // Configurations
             // 

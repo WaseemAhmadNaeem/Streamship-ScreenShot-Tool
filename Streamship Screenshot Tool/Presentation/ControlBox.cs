@@ -35,21 +35,45 @@ namespace Streamship_Screenshot_Tool.Presentation
 
             a.ShowDialog();
             selectedImage = a.CropedImage;
+            a.Dispose();
             if (Properties.Settings.Default.ClipboardCopy && selectedImage != null)
             {
                 Clipboard.SetImage(selectedImage);
             }
+            if (Properties.Settings.Default.OpenEditor)
+            {
+                StreamshipEditor editor = new StreamshipEditor(selectedImage);
+                editor.ShowDialog();
+            }
+            else
+            {
+                //Save to Default
+            }
+            this.Show();
         }
 
         private void FullScreenCapture_Clicked(object sender)
         {
+            this.Hide();
             Streamship_Screenshot_Tool.Business_Logic.ScreenShotFull screen = new Business_Logic.ScreenShotFull();
             selectedImage = screen.CaptureScreen();
             if (Properties.Settings.Default.ClipboardCopy && selectedImage != null)
             {
                 Clipboard.SetImage(selectedImage);
             }
+            if (Properties.Settings.Default.OpenEditor)
+            {
+                using (StreamshipEditor ed = new StreamshipEditor())
+                {
+                    ShowDialog();
 
+                }
+            }
+            else
+            {
+                //Save to Default
+            }
+            this.Show();
         }
 
         private void ControlBox_Load(object sender, EventArgs e)
