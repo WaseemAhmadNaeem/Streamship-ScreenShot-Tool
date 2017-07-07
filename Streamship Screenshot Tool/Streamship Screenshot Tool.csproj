@@ -71,12 +71,6 @@
     <Compile Include="Presentation\ControlBox.Designer.cs">
       <DependentUpon>ControlBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\StreamshipEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\StreamshipEditor.Designer.cs">
-      <DependentUpon>StreamshipEditor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\StreamshipScreenShotAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +90,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ControlBox.resx">
       <DependentUpon>ControlBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\StreamshipEditor.resx">
-      <DependentUpon>StreamshipEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\StreamshipScreenShotAbout.resx">
       <DependentUpon>StreamshipScreenShotAbout.cs</DependentUpon>

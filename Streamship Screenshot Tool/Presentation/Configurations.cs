@@ -30,7 +30,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             cboxClipBoardSnap.Checked = Properties.Settings.Default.ClipboardCopy;
             DefaultDestination = Properties.Settings.Default.Destination;
             lblDestination.Text = DefaultDestination;
-            cBoxOpenEditor.Checked = Properties.Settings.Default.OpenEditor;
+            cBoxAutoSafe.Checked = Properties.Settings.Default.AutoSafe;
             penWidth.Value = Properties.Settings.Default.PenWidth;
         }
 
@@ -41,7 +41,7 @@ namespace Streamship_Screenshot_Tool.Presentation
             Properties.Settings.Default.Destination = DefaultDestination;
             Properties.Settings.Default.InkColor = btnColor.BackColor;
             Properties.Settings.Default.PenWidth = Convert.ToInt32(penWidth.Value);
-            Properties.Settings.Default.OpenEditor = cBoxOpenEditor.Checked;
+            Properties.Settings.Default.AutoSafe = cBoxAutoSafe.Checked;
             Properties.Settings.Default.Save();
 
             this.Dispose();

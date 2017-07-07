@@ -74,12 +74,12 @@ namespace Streamship_Screenshot_Tool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool OpenEditor {
+        public bool AutoSafe {
             get {
-                return ((bool)(this["OpenEditor"]));
+                return ((bool)(this["AutoSafe"]));
             }
             set {
-                this["OpenEditor"] = value;
+                this["AutoSafe"] = value;
             }
         }
         

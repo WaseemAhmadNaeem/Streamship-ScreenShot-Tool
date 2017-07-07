@@ -40,16 +40,13 @@ namespace Streamship_Screenshot_Tool.Presentation
             {
                 Clipboard.SetImage(selectedImage);
             }
-            if (Properties.Settings.Default.OpenEditor)
+            if (Properties.Settings.Default.AutoSafe)
             {
-                StreamshipEditor editor = new StreamshipEditor(selectedImage);
-                editor.ShowDialog();
+                GrantAccess(Properties.Settings.Default.Destination);
+                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToLongTimeString().Replace(':', '3') + ".bmp"));
+
             }
-            else
-            {
-                
-                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToLongTimeString().Replace(':', '2')+".bmp"));
-            }
+
             this.Show();
         }
 
@@ -62,18 +59,13 @@ namespace Streamship_Screenshot_Tool.Presentation
             {
                 Clipboard.SetImage(selectedImage);
             }
-            if (Properties.Settings.Default.OpenEditor)
+            if (Properties.Settings.Default.AutoSafe)
             {
-                using (StreamshipEditor ed = new StreamshipEditor())
-                {
-                    ShowDialog();
+                GrantAccess(Properties.Settings.Default.Destination);
+                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToLongTimeString().Replace(':', '3') + ".bmp"));
 
-                }
             }
-            else
-            {
-                (selectedImage as Bitmap).Save(System.IO.Path.Combine(Properties.Settings.Default.Destination, DateTime.Now.ToLongTimeString().Replace(':', '3')+".bmp"));
-            }
+            
             this.Show();
         }
 
